@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f2fa"><meta name="description" content="Explorez les rôles, les contributions et les pistes de développement de l’équipe Kibarer."><meta name="robots" content="noindex,nofollow"><title>Kibarer · Team Atlas</title><style>
+:root{--ink:#1c1c25;--muted:#8f8d9e;--line:#e5e1eb;--purple:#7762d6;--green:#5c9f8d;--amber:#c39761;--ease:cubic-bezier(.2,.75,.2,1)}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f6f3fa;color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow:hidden}button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button{cursor:pointer}button,a{touch-action:manipulation}a{color:inherit;text-decoration:none}button{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #ae9ce3;outline-offset:4px}button:disabled{opacity:.3;cursor:default}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;top:-100px;left:20px;z-index:100;padding:10px;background:white}.skip-link:focus{top:10px}[hidden]{display:none!important}.ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;background:linear-gradient(115deg,#eff0fc,#faf7fb 65%,#f9f2f0);z-index:0}.ambient i{position:absolute;filter:blur(80px);border-radius:50%;opacity:.8;width:550px;height:550px}.ambient i:nth-child(1){background:#cdd4fd;left:-150px;top:-170px}.ambient i:nth-child(2){background:#f7dfec;right:-180px;top:60px}.ambient i:nth-child(3){background:#f6edbd;width:450px;height:350px;left:44%;bottom:-150px}.topbar{height:104px;display:flex;align-items:center;gap:17px;padding:0 34px;position:relative;z-index:20}.brand{display:flex;align-items:center;gap:11px;white-space:nowrap;flex-shrink:0}.brand svg{width:24px;height:36px}.brand>span{font-weight:650;font-size:15px;letter-spacing:2.3px}.brand small{display:block;font-size:7px;letter-spacing:1.35px;color:#9d98a9;font-weight:500;margin-top:3px}.segment{border-radius:100px;background:#ffffffb5;padding:5px;display:flex;white-space:nowrap;box-shadow:0 10px 25px #746c9406;flex-shrink:0}.segment button{border:0;background:none;padding:10px 15px;border-radius:100px;color:#8e899b;font-size:11px;transition:background .25s,color .25s}.segment button.selected{background:#1d1d25;color:white;box-shadow:0 3px 8px #24203913}sup{font-size:8px;color:#a5a0ad;font-weight:400;margin-left:4px;vertical-align:super}.search-shell{display:flex;align-items:center;border-radius:100px;background:#ffffffbd;height:47px;padding:0 17px;gap:10px;min-width:170px;max-width:460px;flex:1;box-shadow:0 10px 25px #746c9405}.search-shell svg{width:15px;height:15px;fill:none;stroke:#a8a3b5;stroke-width:1.5;flex-shrink:0}.search-shell input{border:0;outline:0;background:none;width:100%;font-size:11px;min-width:0;color:#575261}.search-shell input::placeholder{color:#a9a3b3}.search-shell:focus-within{box-shadow:0 0 0 2px #c5bae7}.search-shell kbd{font:10px monospace;padding:0 5px;color:#b8b1c2;border:1px solid #e6e1ed;border-radius:4px}.round{width:38px;height:38px;display:inline-grid;place-items:center;border:1px solid #ffffffb5;background:#ffffffad;border-radius:50%;font-size:15px;flex-shrink:0;transition:background .2s,transform .2s}.round:hover{background:white;transform:translateY(-1px)}.about-button{font-family:Georgia,serif;font-style:italic;color:#9a90ac}.explorer{height:calc(100dvh - 104px);position:relative;z-index:1}.spine{position:absolute;top:40px;bottom:140px;left:35px;width:110px;z-index:10}.spine-label{font:8px monospace;letter-spacing:2px;color:#b5abc3;display:block;margin:0 0 24px 3px}.spine>div{position:relative;display:flex;flex-direction:column;gap:19px}.spine>div:before{content:"";position:absolute;top:12px;bottom:12px;left:9px;width:1px;background:#ddd5e8}.spine button{background:none;border:0;display:flex;align-items:center;gap:13px;position:relative;padding:0;text-align:left;height:22px;width:115px;color:#b7adc5;font-size:9px;transition:color .25s}.spine-dot{width:19px;height:19px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;background:transparent;font:8px monospace;color:#b9aec8;border:1px solid transparent}.spine button.active{color:#51445f;font-weight:600}.spine button.active .spine-dot{background:linear-gradient(120deg,#b8b6ef,#f1ccda,#cce3d5);border:2px solid white;box-shadow:0 0 14px #a9a0d746;color:#675d78}.spine button:not(.active):hover{color:#77628a}.spine button:not(.active) .spine-name{opacity:.5}.spine button:hover .spine-name{opacity:1}.scene{position:absolute;inset:0 350px 95px 115px;perspective:1100px;outline:none;touch-action:pan-y;isolation:isolate}.watermark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);font:italic clamp(100px,16vw,240px)/1 Georgia,serif;letter-spacing:-12px;color:#aaa1c214;white-space:nowrap;z-index:-1;pointer-events:none}.scene-kicker{position:absolute;top:7px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:#b3a9c2;font:8px monospace;letter-spacing:1.4px;white-space:nowrap}.tiny-dot{width:5px;height:5px;border-radius:50%;background:#b3bfa1}.kicker-line{width:25px;height:1px;background:#cfc7d9}.orbit{position:absolute;inset:0;transform-style:preserve-3d;perspective:1100px;transition:opacity .3s}.person-card{position:absolute;left:50%;top:46%;margin:-161px 0 0 -131px;width:262px;height:322px;border-radius:26px;padding:8px;background:#ffffffed;border:1px solid #ffffffda;box-shadow:0 20px 40px #57436714,0 5px 12px #6250750b;transform-style:preserve-3d;transform-origin:center;transition:transform .8s var(--ease),opacity .7s,filter .7s,box-shadow .35s;user-select:none;text-align:left;will-change:transform;overflow:hidden;backface-visibility:hidden}.person-card.active{box-shadow:0 28px 50px #57436724,0 9px 20px #62507513}.person-card:hover{box-shadow:0 30px 65px #57436726}.card-art{height:215px;position:relative;border-radius:20px;overflow:hidden;background:var(--cover);isolation:isolate}.card-art:before{content:"";position:absolute;inset:0;background:linear-gradient(130deg,#ffffff50,transparent 60%);z-index:1}.card-art svg{position:absolute;width:100%;height:100%;inset:0}.art-mono{position:absolute;font:italic 72px/1 Georgia,serif;color:#ffffffde;letter-spacing:-6px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;text-shadow:0 3px 20px #6c5a7830}.art-no{position:absolute;top:12px;left:12px;z-index:3;font:9px monospace;color:#fff;background:#ffffff36;border:1px solid #ffffff40;border-radius:100px;padding:3px 7px;backdrop-filter:blur(12px)}.art-category{position:absolute;bottom:13px;left:13px;z-index:3;font:7px monospace;color:#fff;letter-spacing:1.1px}.art-symbol{position:absolute;right:12px;top:10px;color:#fff;z-index:3;font-size:17px}.card-copy{padding:12px 11px 5px;display:grid;grid-template-columns:1fr 28px;gap:4px}.card-copy h2{font:26px/1.1 Georgia,serif;margin:0;letter-spacing:-.8px}.card-copy p{font-size:8px;letter-spacing:.15px;color:#a39bad;margin:5px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px}.card-arrow{font-size:16px;display:grid;place-items:center;background:#f4f0f8;color:#a197b0;width:27px;height:27px;border-radius:50%;grid-row:1/3;grid-column:2}.card-copy:after{content:"RÔLE · CONTRIBUTIONS · PROGRESSION";grid-column:1/-1;font:6px monospace;letter-spacing:1.05px;color:#b9b1c3;margin-top:8px}.scene-controls{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;gap:20px;align-items:center;z-index:3}.scene-controls .round{width:30px;height:30px;font-size:13px}.scene-controls>span{font:9px monospace;color:#aca1b9;min-width:54px;text-align:center}.scene-hint{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);font-size:9px;color:#b5aabd;white-space:nowrap}.scene-hint span{margin:0 7px;color:#cdc4d5}.inspector{position:absolute;right:34px;top:36px;bottom:128px;max-height:460px;width:286px;border-radius:29px;padding:27px 27px 20px;background:#ffffffa1;border:1px solid #fff9;box-shadow:0 20px 50px #79618e06;backdrop-filter:blur(22px);display:flex;flex-direction:column;z-index:12;animation:inspector-in .4s both}.inspector-number{font:9px monospace;letter-spacing:1.5px;color:#b4a8c2;margin-bottom:29px}.inspector-number strong{color:#6e647c;font-weight:400}.eyebrow{font:8px/1.6 monospace;letter-spacing:1.3px;color:#a293b6;text-transform:uppercase;display:block}.inspector h1{font:43px/1.1 Georgia,serif;letter-spacing:-1.5px;margin:7px 0 9px}.inspector-role{font-size:10px;color:#9d93aa;margin:0 0 17px}.inspector-expectation{font-size:11px;line-height:1.9;color:#a095ac;margin:0 0 15px}.inspector-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:21px}.tag{display:inline-block;border:1px solid #e6dfed;border-radius:100px;padding:4px 8px;font-size:8px;color:#a096ae;background:#fff5}.pill{border:0;border-radius:100px;display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:12px 19px;background:white;font-size:11px;transition:transform .2s,box-shadow .2s}.pill:hover{transform:translateY(-2px);box-shadow:0 8px 20px #66527912}.pill.dark{background:#24222b;color:white}.inspector .pill{align-self:flex-start;margin-top:auto}.inspector-foot{font-size:8px;color:#b7adc3;margin-top:15px;line-height:1.8}.dock{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:21;display:flex;align-items:center;gap:12px;border-radius:100px;padding:6px 13px 6px 6px;max-width:calc(100% - 60px);background:#ffffffe0;border:1px solid #fff9;box-shadow:0 15px 35px #79668c13;backdrop-filter:blur(22px);white-space:nowrap}.filter-group{display:flex;gap:3px}.filter-group button,.next-chapter{border:0;background:none;font-size:10px;color:#a69aaf;border-radius:100px;padding:11px 14px;white-space:nowrap}.filter-group button.active{background:#25232c;color:white}.dock-separator{height:21px;width:1px;background:#ede5f1}.next-chapter{display:flex;align-items:center;gap:8px;color:#81738f;padding:10px 7px}.next-chapter>span:last-child{margin-left:8px;color:#b6a7c2}.gradient-dot{width:12px;height:12px;border-radius:50%;background:conic-gradient(#d6b5e4,#eecbbb,#d8e2c0,#b7d4df,#d6b5e4);border:2px solid #fff;box-shadow:0 0 0 1px #eee5f1}.dock-note{font:7px monospace;letter-spacing:.2px;color:#c0b4c9;padding-right:5px}.gallery{padding:5px 39px 130px;max-width:1600px;margin:auto}.gallery-heading{display:flex;align-items:flex-end;justify-content:space-between;margin:5px 0 32px}.gallery h1{font:italic 48px/1.1 Georgia,serif;margin:8px 0 15px;letter-spacing:-2px}.gallery-heading p{font-size:12px;color:#a297ad}.count-pill{font:9px monospace;background:#24222b;color:#fff;padding:7px 11px;border-radius:100px;vertical-align:middle;margin-left:20px;letter-spacing:0;display:inline-block}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.gallery-card{padding:0;border:0;text-align:left;background:none;border-radius:22px;transition:transform .4s var(--ease)}.gallery-card:hover{transform:translateY(-7px)}.gallery-card .card-art{height:210px;border-radius:22px;box-shadow:0 12px 30px #8c789316}.gallery-card .card-copy{padding:13px 4px}.gallery-card .card-copy h2{font-size:25px}.gallery-card .card-copy p{font-size:9px}.gallery-card .card-copy:after{display:none}.explorer[data-view="gallery"]{height:auto}.explorer[data-view="gallery"] .spine,.explorer[data-view="gallery"] .scene,.explorer[data-view="gallery"] .inspector{display:none}body.gallery-view{overflow:auto}.empty-state{position:absolute;inset:20% 0;text-align:center}.empty-state h1{font:30px Georgia,serif}.empty-state p{font-size:12px;color:var(--muted);margin-bottom:25px}dialog{color:var(--ink);border:1px solid #fff9;background:#faf8fdf7;box-shadow:0 30px 140px #37304430;border-radius:30px;padding:0;max-height:calc(100dvh - 60px);animation:dialog-in .45s var(--ease)}dialog::backdrop{background:#89819d4d;backdrop-filter:blur(12px)}.profile-dialog{width:1120px;max-width:calc(100% - 60px)}.profile-head{padding:29px 36px 20px;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ece6f0;position:sticky;top:0;background:#faf8fdf2;backdrop-filter:blur(20px);z-index:4}.profile-heading{display:flex;align-items:center;gap:17px}.mini-art{position:relative;overflow:hidden;width:59px;height:67px;flex-shrink:0;border-radius:17px;background:var(--cover)}.mini-art svg{position:absolute;inset:0;width:100%;height:100%}.mini-art .art-mono{font-size:27px;letter-spacing:-3px}.profile-head h1{font:36px/1.1 Georgia,serif;margin:2px 0 4px;letter-spacing:-1px}.profile-head .eyebrow{font-size:7px}.profile-head p{color:#a599b1;font-size:10px;margin:0}.profile-controls{display:flex;align-items:center;gap:7px}.profile-controls .round{border-color:#eae2f0;background:white;width:32px;height:32px}.profile-controls .close{font-size:22px;margin-left:10px}.profile-layout{display:grid;grid-template-columns:minmax(0,1fr) 355px}.profile-main{padding:0 35px 30px;border-right:1px solid #ece6f0}.profile-tabs{display:flex;gap:26px;border-bottom:1px solid #ece6f0;position:sticky;top:0;margin-bottom:26px}.profile-tabs button{border:0;background:none;border-bottom:2px solid transparent;padding:19px 0 15px;font-size:10px;color:#ae9cba}.profile-tabs button.active{color:#796192;border-bottom-color:#ad96c3}.profile-section{animation:content-in .3s both}.profile-section h2{font:25px/1.25 Georgia,serif;letter-spacing:-.5px;margin:8px 0 13px}.expectation{font-size:13px;line-height:1.9;color:#91839f;margin:0 0 26px}.content-block{margin:25px 0;padding:0 0 20px;border-bottom:1px solid #eee8f2}.content-block:last-child{border:0;padding:0}.content-block h3{font-size:11px;font-weight:550;color:#9680a9;margin:0 0 12px;display:flex;align-items:center;gap:8px}.content-block h3:before{content:"";width:5px;height:5px;border-radius:50%;background:#96b9a4}.content-block.growth h3:before{background:#d2af85}.content-block ul{padding:0;list-style:none;margin:0}.content-block li{padding:5px 0 5px 15px;position:relative;font-size:12px;line-height:1.8;color:#9a8ca7}.content-block li:before{content:"—";position:absolute;left:0;color:#c3b5cf}.profile-side{padding:25px 25px 28px}.radar-heading{display:flex;justify-content:space-between;align-items:center}.radar-heading h2{font:22px Georgia,serif;margin:0;color:#65566e}.radar-heading>span{font:7px monospace;letter-spacing:.5px;color:#b9a8c5}.radar{width:100%;height:auto;display:block;margin:5px 0 -5px;overflow:visible}.radar-grid{fill:none;stroke:#e4dbea;stroke-width:.8}.radar-axis{stroke:#e6deed;stroke-width:.8}.radar-pulse{transform-box:fill-box;transform-origin:center;animation:node-pulse 5s ease-in-out infinite}.radar-node{cursor:pointer;outline:none}.radar-node text{font-size:9px;fill:#a18db3;transition:fill .2s}.radar-node.active text,.radar-node:hover text{fill:#665275}.radar-node:focus-visible circle{stroke:#9682c0;stroke-width:4}.radar-note{font-size:8px;line-height:1.8;color:#b4a4c0;margin:0 0 18px}.radar-evidence{background:#f2edf7;border:1px solid #e9e1f0;border-radius:14px;padding:14px;min-height:105px}.radar-evidence .axis-title{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#8a729e}.radar-evidence .axis-status{font-size:8px}.radar-evidence p{font-size:10px;line-height:1.8;color:#ad9ab9;margin:8px 0 0}.radar-legend{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 23px;font-size:7px;color:#b4a4bf}.radar-legend span{display:flex;align-items:center;gap:4px}.radar-legend i{height:5px;width:5px;border-radius:50%}.tools-label{font:7px monospace;color:#b6a2c3;letter-spacing:1.1px;display:block;margin-bottom:9px}.tool-tags{display:flex;flex-wrap:wrap;gap:5px}.tool-tags .tag{font-size:8px;color:#b3a0be;border-color:#e6deed}.source-note{border-top:1px solid #e9e1ef;padding-top:18px;margin-top:23px;font-size:8px;color:#b3a1bf;line-height:1.9}.achievement{border:1px solid #e9e1f0;border-radius:15px;padding:17px 18px;margin:12px 0;background:#fff7}.achievement h3{font-size:12px;font-weight:550;color:#8a759d;margin:0 0 7px}.achievement p{font-size:11px;color:#a18dae;line-height:1.8;margin:0 0 9px}.source-pill{font:7px monospace;border-radius:100px;border:1px solid #e4dbea;padding:4px 7px;color:#b09abd;display:inline-block}.action{display:grid;grid-template-columns:26px 1fr;gap:12px;border-bottom:1px solid #ece5f2;padding:19px 0}.action-no{height:23px;width:23px;background:#ece6f4;border-radius:50%;display:grid;place-items:center;font:8px monospace;color:#b09dc3}.action h3{font-size:12px;font-weight:550;color:#8f779f;margin:0 0 9px}.action p{font-size:10px;color:#ad98ba;line-height:1.8;margin:5px 0}.action strong{color:#a18aad;font-weight:500}.month-note{font-size:10px;color:#b4a0c2;line-height:1.8;border-left:2px solid #d7c8e4;padding-left:12px;margin:15px 0 20px}.info-dialog{width:700px;max-width:calc(100% - 50px);padding:40px}.info-dialog>.close{position:absolute;top:19px;right:19px;font-size:22px}.info-dialog h1{font:40px/1.15 Georgia,serif;letter-spacing:-1px;margin:10px 0 22px}.info-dialog p{font-size:12px;color:#9b88aa;line-height:1.9}.info-dialog .eyebrow{margin-top:5px}.programme-list{margin:25px 0 0;padding:0;list-style:none;counter-reset:programme}.programme-list li{padding:17px 0 17px 40px;border-top:1px solid #e9e0f0;position:relative;counter-increment:programme}.programme-list li:before{content:counter(programme,decimal-leading-zero);position:absolute;left:0;top:19px;font:9px monospace;color:#baa1cd}.programme-list h2{font:19px Georgia,serif;margin:0 0 5px}.programme-list p{font-size:11px;margin:0}.info-dialog .footnote{font-size:9px;border-top:1px solid #e8dff0;padding-top:18px;margin-top:25px}.programme-head .gradient-dot{display:inline-block;vertical-align:middle;margin-right:6px}.dialog-kicker{font:8px monospace;color:#b4a0c1;letter-spacing:.5px}.month-tag{font:8px monospace;color:#b8a4c5;border:1px solid #e2d8ec;border-radius:100px;padding:5px 9px;display:inline-block}.body-hint{color:#b6a5c3;font-size:10px;margin:20px 0}.no-results{font:15px Georgia,serif;color:#9f8aaf;padding:40px}.gallery-card:focus-visible{outline-offset:8px}
+@keyframes content-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@keyframes dialog-in{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes inspector-in{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}@keyframes node-pulse{0%,100%{opacity:.4}50%{opacity:.8}}
+@media(min-width:1500px){.scene{right:430px;left:160px}.inspector{right:65px;top:70px;width:310px;max-height:485px}.person-card{width:292px;height:355px;margin:-178px 0 0 -146px}.person-card .card-art{height:242px}.card-copy h2{font-size:30px}.spine{left:47px;top:70px}.topbar{padding:0 45px;gap:25px}.search-shell{max-width:600px}.inspector h1{font-size:49px}.inspector-expectation{font-size:12px}.dock{bottom:28px;padding-right:20px;gap:22px}.filter-group button{padding:13px 19px;font-size:11px}.gallery-grid{gap:32px}.gallery-card .card-art{height:260px}.scene-kicker{top:30px}.scene-hint{bottom:15px}}
+@media(max-width:1100px){.topbar{padding:0 24px;gap:10px;height:90px}.brand>span{font-size:12px;letter-spacing:1.5px}.brand small{font-size:6px}.collection{display:none}.view-control button{padding:9px 12px;font-size:10px}.scene{inset:0 300px 90px 85px}.inspector{width:247px;right:23px;top:38px;padding:23px;max-height:430px}.inspector h1{font-size:36px}.inspector-number{margin-bottom:20px}.inspector-expectation{font-size:10px}.inspector-tags{margin-bottom:15px}.spine{left:24px;width:80px}.spine .spine-name{font-size:8px}.spine button{gap:9px;width:92px}.scene-kicker{font-size:6px;letter-spacing:.7px}.person-card{width:235px;height:295px;margin:-148px 0 0 -118px}.person-card .card-art{height:192px}.card-copy h2{font-size:24px}.card-copy p{max-width:164px}.card-copy:after{font-size:5.5px}.dock-note{display:none}.gallery-grid{grid-template-columns:repeat(3,1fr);gap:22px}.explorer{height:calc(100dvh - 90px)}.gallery{padding:10px 28px 115px}.profile-layout{grid-template-columns:1fr 310px}.profile-main{padding:0 28px 28px}.profile-side{padding:24px 18px}.profile-dialog{max-width:calc(100% - 35px)}.profile-head{padding:24px 28px}}
+@media(max-width:760px){body{overflow:auto}.topbar{height:auto;padding:22px 20px 8px;flex-wrap:wrap;gap:15px}.brand{margin-right:auto}.brand>span{font-size:13px;letter-spacing:1.6px}.brand small{font-size:6px}.brand svg{width:20px;height:29px}.about-button{width:30px;height:30px;font-size:13px;order:1}.view-control{order:0}.view-control button{padding:8px 10px;font-size:9px}.search-shell{order:2;max-width:none;flex-basis:100%;height:43px;margin-top:2px}.search-shell input{font-size:11px}.explorer{height:auto;min-height:710px;padding-top:5px}.scene{position:relative;inset:auto;margin:0 20px 0 40px;height:405px;perspective:900px}.scene-kicker{top:18px;font-size:6px;letter-spacing:.7px;gap:7px}.kicker-line{width:14px}.person-card{width:215px;height:272px;margin:-136px 0 0 -108px;top:48%;border-radius:22px;padding:7px}.person-card .card-art{height:174px;border-radius:17px}.card-copy{padding:10px 8px 3px}.card-copy h2{font-size:24px}.card-copy p{font-size:7px;max-width:155px}.card-copy:after{font-size:5px;letter-spacing:.7px;margin-top:6px}.art-mono{font-size:60px}.art-category{font-size:6px}.scene-controls{bottom:23px;gap:18px}.scene-controls .round{height:27px;width:27px;font-size:11px}.scene-hint{bottom:0;font-size:7px}.watermark{font-size:102px;letter-spacing:-7px}.spine{left:13px;top:72px;bottom:auto;width:18px}.spine-label{font-size:6px;writing-mode:vertical-rl;letter-spacing:1px;margin:0 0 14px 5px}.spine>div{gap:13px}.spine button{height:15px;width:17px}.spine-dot{width:16px;height:16px;font-size:6px}.spine .spine-name{display:none}.spine>div:before{left:7px;top:7px;bottom:7px}.inspector{position:relative;right:auto;top:auto;bottom:auto;max-height:none;width:calc(100% - 40px);margin:15px 20px 105px;padding:22px;border-radius:23px;display:block}.inspector-number{font-size:8px;letter-spacing:1px;margin:0 0 9px}.inspector h1{font-size:33px;margin:4px 0}.inspector-role{margin:4px 0 11px;font-size:9px}.inspector-expectation{font-size:11px;margin-bottom:12px;max-width:550px}.inspector-tags{margin-bottom:14px}.inspector .pill{font-size:10px;padding:10px 15px}.inspector-foot{font-size:7px;margin-top:11px}.inspector .eyebrow{font-size:7px}.dock{bottom:13px;max-width:calc(100% - 25px);padding:5px 7px 5px 5px;gap:6px}.filter-group{gap:1px}.filter-group button{padding:10px 11px;font-size:8px}.filter-group sup{font-size:6px;margin-left:2px}.next-chapter{font-size:0;padding:8px 6px;gap:4px}.next-chapter>span:last-child{font-size:12px;margin-left:2px}.next-chapter .gradient-dot{width:13px;height:13px}.dock-separator{height:18px}.gallery{padding:15px 20px 110px}.gallery h1{font-size:34px;letter-spacing:-1px;line-height:1.2;max-width:320px}.gallery-heading{margin-bottom:24px}.gallery-heading p{font-size:10px;max-width:330px;line-height:1.8}.count-pill{font-size:7px;margin:8px 0 0 0;display:block;width:max-content;padding:5px 9px}.gallery-grid{grid-template-columns:1fr 1fr;gap:22px 15px}.gallery-card .card-art{height:165px;border-radius:18px}.gallery-card .art-mono{font-size:47px;letter-spacing:-3px}.gallery-card .art-no{font-size:7px;padding:2px 5px;top:9px;left:9px}.gallery-card .art-category{font-size:5px;bottom:10px;left:10px}.gallery-card .card-copy{padding:11px 1px}.gallery-card .card-copy h2{font-size:23px}.gallery-card .card-copy p{font-size:7px;max-width:125px}.gallery-card .card-arrow{width:21px;height:21px;font-size:13px}.profile-dialog{width:100%;max-width:calc(100% - 16px);max-height:calc(100dvh - 20px);border-radius:23px}.profile-head{padding:20px 18px 16px;gap:10px}.mini-art{height:48px;width:42px;border-radius:12px}.mini-art .art-mono{font-size:21px;letter-spacing:-2px}.profile-heading{gap:10px}.profile-head h1{font-size:28px}.profile-head p{font-size:8px;max-width:180px}.profile-head .eyebrow{font-size:6px}.profile-controls{gap:4px}.profile-controls .round{height:27px;width:27px;font-size:10px}.profile-controls .close{font-size:19px;margin-left:1px}.profile-layout{display:flex;flex-direction:column}.profile-main{padding:0 21px 5px;border-right:0}.profile-tabs{gap:24px;margin-bottom:21px}.profile-tabs button{font-size:10px;padding:17px 0 13px}.profile-section h2{font-size:24px}.expectation{font-size:12px}.content-block li{font-size:11px}.profile-side{padding:22px;border-top:1px solid #ece5f2}.radar{max-width:335px;margin:5px auto -4px}.radar-heading h2{font-size:23px}.radar-evidence{min-height:90px}.radar-note{font-size:8px}.source-note{font-size:8px}.info-dialog{max-width:calc(100% - 24px);padding:33px 25px;border-radius:24px}.info-dialog h1{font-size:33px}.info-dialog>.close{top:15px;right:15px;width:30px;height:30px}.info-dialog p{font-size:11px}.programme-list h2{font-size:18px}.programme-list p{font-size:10px}.programme-list li{padding-left:34px}.achievement{padding:14px}.achievement h3{font-size:11px}.achievement p{font-size:10px}.action h3{font-size:11px}.action p{font-size:10px}}
+@media(max-width:370px){.brand>span{font-size:11px}.view-control button{padding:7px 8px;font-size:8px}.topbar{gap:9px;padding-left:15px;padding-right:15px}.gallery-grid{gap:15px 11px}.gallery-card .card-art{height:145px}.gallery-card .card-copy h2{font-size:21px}.profile-controls .round:not(.close){display:none}}
+.inspector-expectation,.expectation,.content-block li,.achievement p,.action p,.month-note,.info-dialog p,.body-hint{color:#70647c}.inspector-role,.tag,.profile-head p,.source-note,.radar-note,.radar-evidence p,.tools-label,.tool-tags .tag,.source-pill,.profile-tabs button,.inspector-foot,.eyebrow,.inspector-number,.scene-hint,.gallery-heading p,.card-copy p,.dock-note{color:#82718e}.content-block h3,.achievement h3,.action h3,.action strong{color:#6e587f}.radar-node text{fill:#7c688b}.radar-heading>span,.radar-evidence .axis-title,.radar-evidence .axis-status,.radar-legend,.month-tag{color:#82718e}.spine button{color:#83738f}.spine button:not(.active) .spine-name{opacity:.8}.scene-kicker,.scene-controls>span{color:#8c7b9a}.card-copy:after{color:#8f7f9d}.filter-group button,.next-chapter,.segment button{color:#7f708e}.search-shell input::placeholder{color:#8d7f9a}
+@media(max-width:760px){body{overflow-x:hidden}.explorer{overflow:hidden}.topbar{gap:12px}.brand{flex:1 0 calc(100% - 42px);margin-right:0}.about-button{order:0}.search-shell{order:2;flex:1 1 140px;min-width:130px;margin-top:0}.view-control{order:2}.view-control button{padding:8px 9px}.topbar .search-shell kbd{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+</style></head>
+<body><a class="skip-link" href="#scene">Aller aux cartes</a>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="topbar"><a class="brand" href="#" aria-label="Team Atlas, retour à l’équipe"><svg viewBox="0 0 26 36" aria-hidden="true"><defs><linearGradient id="brand-grad" x2="1" y2="1"><stop stop-color="#8978f0"/><stop offset=".5" stop-color="#e78cbb"/><stop offset="1" stop-color="#87bda1"/></linearGradient></defs><path d="M5 4C27 4 27 14 5 14s0 10 17 10S22 33 5 33" fill="none" stroke="url(#brand-grad)" stroke-width="3.5" stroke-linecap="round"/></svg><span>TEAM ATLAS<small>KIBARER · PEOPLE & GROWTH</small></span></a>
+<div class="segment collection"><button class="selected" id="team-link">L’équipe <sup>08</sup></button><button id="month-link">Novembre <sup>2026</sup></button></div>
+<label class="search-shell"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><input id="search" type="search" placeholder="Un nom, un rôle, une compétence…" aria-label="Rechercher dans l’équipe"><kbd>/</kbd></label>
+<div class="segment view-control" aria-label="Disposition des cartes"><button class="selected" data-view="helix" aria-pressed="true">Hélice</button><button data-view="ring" aria-pressed="false">Cercle</button><button data-view="gallery" aria-pressed="false">Galerie</button></div><button class="round about-button" id="about" aria-label="À propos de cette lecture">i</button></header>
+<main id="explorer" class="explorer" data-view="helix"><nav id="spine" class="spine" aria-label="Sélectionner un profil"><span class="spine-label">ÉQUIPE</span><div id="spine-items"></div></nav>
+<section class="scene" id="scene" tabindex="0" aria-label="Cartes de l’équipe : défiler, glisser ou utiliser les flèches"><div class="watermark" aria-hidden="true">Together.</div><div class="scene-kicker"><span class="tiny-dot"></span> OCTOBRE 2026 <span class="kicker-line"></span> UNE ÉQUIPE, HUIT REGARDS</div><div class="orbit" id="orbit"></div><div class="empty-state" id="empty-state" hidden><h1>Aucun profil trouvé.</h1><p>Essaie un autre nom ou une autre compétence.</p><button class="pill dark" id="reset-search">Voir toute l’équipe</button></div><div class="scene-controls"><button class="round" id="previous" aria-label="Profil précédent">←</button><span id="position" aria-live="polite">01 / 08</span><button class="round" id="next" aria-label="Profil suivant">→</button></div><div class="scene-hint">Défile ou glisse pour explorer <span>·</span> Clique pour découvrir</div></section>
+<aside id="inspector" class="inspector" aria-label="Aperçu du profil sélectionné"></aside>
+<section class="gallery" id="gallery" aria-label="Galerie des profils" hidden><div class="gallery-heading"><div><span class="eyebrow">PEOPLE & DEVELOPMENT</span><h1>Les visages de l’équipe<span class="count-pill">08 profils</span></h1><p>Les rôles, les contributions et les prochaines étapes. Un profil à la fois.</p></div></div><div id="gallery-grid" class="gallery-grid"></div></section>
+</main>
+<footer class="dock"><div class="filter-group" aria-label="Filtrer l’équipe"><button class="active" data-filter="all">Toute l’équipe <sup>8</sup></button><button data-filter="marketing">Marketing <sup>3</sup></button><button data-filter="creative">Création <sup>5</sup></button></div><div class="dock-separator"></div><button class="next-chapter" id="programme"><span class="gradient-dot"></span> Le prochain chapitre <span>↗</span></button><span class="dock-note">Bilan de développement · version de travail</span></footer>
+<dialog id="profile-dialog" class="profile-dialog" aria-labelledby="profile-name"><div id="profile-inner"></div></dialog>
+<dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="close round" id="close-info" aria-label="Fermer">×</button><div id="info-content"></div></dialog>
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+<script>
+window.TEAM_DATA = {
+  "language": "fr",
+  "referenceDate": "2026-10-30",
+  "planningMonth": "Novembre 2026",
+  "status": "Première base de discussion, à compléter avec les comptes rendus et les livrables.",
+  "sourceNote": "Attentes déduites des huit fiches de poste consultées ; appréciations et réalisations issues du témoignage de Cristobal du 30 octobre 2026, sans vérification indépendante des livrables.",
+  "actionNote": "Les actions de novembre 2026 sont des propositions à discuter et à confirmer avec les personnes concernées. Elles ne constituent pas des affectations ou des engagements déjà approuvés.",
+  "profiles": [
+    {
+      "id": "natalie",
+      "name": "Natalie",
+      "title": "Marketing Manager",
+      "expectation": "Piloter la stratégie marketing, coordonner l’équipe et les partenaires internes, et accompagner les campagnes jusqu’à leur mise en œuvre et au suivi de leurs résultats.",
+      "strengths": [
+        "Bonne compréhension de la direction esthétique attendue, selon le management.",
+        "Une vision graphique qui pourrait être davantage transmise à l’équipe."
+      ],
+      "progress": [
+        "Rendre le suivi des projets plus régulier, avec une prochaine étape et un responsable clairement identifiés.",
+        "Accompagner les livrables jusqu’à leur utilisation effective, au-delà de leur création.",
+        "Fluidifier les échanges avec l’équipe technique et clarifier les circuits de validation."
+      ],
+      "achievements": [
+        {
+          "title": "Une campagne de diffusion a été lancée sur le périmètre marketing, avec un accompagnement direct du management.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "La réalisation est rapportée à l’échelle de l’équipe ; la contribution individuelle et les résultats de campagne restent à préciser."
+        }
+      ],
+      "nextMonth": [
+        {
+          "title": "Proposer trois points de coordination courts par semaine, chacun suivi d’un compte rendu.",
+          "owner": "Management et Natalie, avec les interlocuteurs concernés",
+          "criterion": "Un rythme est convenu ; chaque point réalisé laisse une trace des décisions, des responsables, des échéances et des blocages."
+        },
+        {
+          "title": "Clarifier la prochaine étape des projets encore ouverts et leur circuit de validation.",
+          "owner": "Natalie et management",
+          "criterion": "Chaque projet retenu pour la revue dispose d’un responsable de suivi, d’un valideur, d’une échéance et d’une prochaine action."
+        },
+        {
+          "title": "Organiser une transmission plus régulière des repères graphiques à l’équipe.",
+          "owner": "Natalie et responsables créatifs concernés",
+          "criterion": "Des exemples de référence et des critères de validation sont partagés sur les productions pilotes choisies."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "à préciser",
+          "evidence": "Le témoignage porte surtout sur la coordination et les étapes de déploiement ; les livrables individuels restent à distinguer."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management lui attribue une bonne compréhension de l’esthétique globale recherchée."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à préciser",
+          "evidence": "Le niveau d’autonomie par type de décision n’a pas été documenté séparément."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à développer",
+          "evidence": "Plusieurs projets sont décrits comme nécessitant un suivi plus rapproché pour aboutir."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage propose de rendre les échanges entre marketing, création et technique plus directs et plus réguliers."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Des outils sont mentionnés dans la fiche de poste ; leur maîtrise individuelle n’a pas été démontrée par des exemples examinés."
+        }
+      ],
+      "uncertaintyNote": "Les appréciations proviennent du management. Les responsabilités exactes, échéances convenues, dépendances et contributions individuelles doivent être rapprochées des comptes rendus avant toute conclusion définitive.",
+      "initials": "NA",
+      "tint": "#b49bc7",
+      "cover": "linear-gradient(145deg, #c4afdb, #9e8cb5)",
+      "family": "marketing",
+      "tools": [
+        "Meta Ads Manager",
+        "TikTok Ads Manager",
+        "Google Analytics",
+        "Google Workspace",
+        "Canva",
+        "Respond.io",
+        "ChatGPT / outils IA"
+      ],
+      "tags": [
+        "Stratégie marketing",
+        "Coordination d’équipe",
+        "Acquisition & campagnes",
+        "Marque & communication"
+      ]
+    },
+    {
+      "id": "jihan",
+      "name": "Jihan",
+      "title": "Marketing Assistant",
+      "expectation": "Produire et coordonner des contenus et supports marketing conformes aux attentes, tout en assurant le suivi des demandes et des échanges nécessaires à leur réalisation.",
+      "strengths": [
+        "Bonne compréhension de la direction esthétique recherchée, selon le management.",
+        "Réceptivité et réactivité aux échanges directs signalées comme des points d’appui."
+      ],
+      "progress": [
+        "Mieux traduire le brief en un premier livrable complet et conforme.",
+        "Développer les propositions personnelles et l’initiative dans l’exécution.",
+        "Rendre les avancées et les prochaines relances visibles sans attendre une sollicitation."
+      ],
+      "achievements": [
+        {
+          "title": "Un support de présentation a été produit puis retravaillé avec un accompagnement direct.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "La production et la reprise sont rapportées ; la date de validation finale et le nombre de versions restent à préciser."
+        },
+        {
+          "title": "Une première liste de contacts a été préparée, puis reprise avec accompagnement.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "Le management rapporte des ajustements de structure ; le brief et la version finale n’ont pas été examinés."
+        },
+        {
+          "title": "Une liste de profils partenaires potentiels a été constituée.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "L’existence de la liste est rapportée ; les prises de contact, retours et propositions restent à documenter."
+        }
+      ],
+      "nextMonth": [
+        {
+          "title": "Utiliser un brief court et une vérification de conformité avant chaque remise.",
+          "owner": "Jihan et manager référent",
+          "criterion": "Les missions pilotes disposent d’un résultat attendu, d’un exemple de référence, d’une échéance et d’une vérification avant transmission."
+        },
+        {
+          "title": "Tester un point quotidien bref sur les priorités et les retours attendus.",
+          "owner": "Jihan et manager référent",
+          "criterion": "Les tâches prioritaires présentent une avancée, un éventuel blocage et une prochaine action actualisés au rythme convenu."
+        },
+        {
+          "title": "Structurer le suivi des contacts partenaires et du contenu éditorial.",
+          "owner": "Jihan, sous coordination du management",
+          "criterion": "Chaque sujet suivi possède une personne responsable, un état documenté, une prochaine étape et une échéance."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage décrit des reprises nécessaires sur un support de présentation et une liste de contacts."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "à développer",
+          "evidence": "La direction esthétique est comprise selon le management ; la proposition personnelle et la qualité de la première version restent des axes de travail."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à développer",
+          "evidence": "Un accompagnement quotidien est proposé pour les priorités, l’initiative et les retours."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à développer",
+          "evidence": "La constitution d’une liste de partenaires est rapportée, mais la suite des échanges n’est pas documentée."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management souligne une bonne compréhension des échanges et une réactivité mobilisable avec un accompagnement direct."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Les outils figurent dans la fiche ; aucun exemple suffisant ne permet encore de qualifier leur maîtrise individuelle."
+        }
+      ],
+      "uncertaintyNote": "Les exemples reposent sur un témoignage unique. Les consignes initiales, les délais convenus, les versions et les validations doivent être réunis pour préciser les progrès attendus.",
+      "initials": "JI",
+      "tint": "#d7ae94",
+      "cover": "linear-gradient(145deg, #edc6af, #bd8f84)",
+      "family": "marketing",
+      "tools": [
+        "Canva",
+        "CapCut",
+        "Google Workspace",
+        "ChatGPT / outils IA"
+      ],
+      "tags": [
+        "Réseaux sociaux",
+        "Coordination de production",
+        "Rédaction & contenu",
+        "Supports commerciaux"
+      ]
+    },
+    {
+      "id": "alkhaf",
+      "name": "Alkhaf",
+      "title": "Creative Lead",
+      "expectation": "Diriger la création, organiser les priorités et les ressources de l’équipe, et rendre la production lisible et coordonnée jusqu’à la livraison.",
+      "strengths": [],
+      "progress": [
+        "Partager une vue claire des projets, des ressources et des méthodes de production.",
+        "Clarifier la répartition du travail et les capacités disponibles de chaque membre de l’équipe.",
+        "Définir un rythme de revue permettant de traiter les dépendances et les validations."
+      ],
+      "achievements": [],
+      "nextMonth": [
+        {
+          "title": "Présenter le fonctionnement actuel de la production lors d’une revue dédiée.",
+          "owner": "Alkhaf et management",
+          "criterion": "La revue permet de comprendre les étapes de production, les responsables, les emplacements des fichiers et les validations."
+        },
+        {
+          "title": "Établir une vue partagée de la charge et des compétences à confirmer.",
+          "owner": "Alkhaf et équipe créative, avec le management",
+          "criterion": "Les projets en cours et les disponibilités sont visibles ; les compétences de montage et les besoins de formation sont documentés par des exemples."
+        },
+        {
+          "title": "Étudier une organisation commune des fichiers avant de décider des moyens nécessaires.",
+          "owner": "Alkhaf, management et interlocuteur technique à confirmer",
+          "criterion": "Une proposition décrit le classement, les accès, les responsabilités et les besoins éventuels, sans présumer d’un achat."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "non évalué",
+          "evidence": "Aucun livrable individuel précis n’a été examiné ou décrit suffisamment pour apprécier l’exécution."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "non évalué",
+          "evidence": "Le rôle de direction créative est documenté, mais il ne démontre pas à lui seul un niveau de performance."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à préciser",
+          "evidence": "Les méthodes de décision et l’organisation quotidienne restent à expliciter avec l’intéressé."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à développer",
+          "evidence": "Le management demande davantage de visibilité sur la production, les projets en attente et l’allocation des ressources."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage signale le besoin d’un échange dédié pour partager plus clairement les méthodes d’organisation."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Des besoins techniques sont évoqués pour l’équipe créative ; le niveau individuel reste à confirmer."
+        }
+      ],
+      "uncertaintyNote": "Le récit concerne surtout la visibilité et l’organisation de l’équipe. Il ne fournit pas de réalisations individuelles assez détaillées pour qualifier l’ensemble des compétences d’Alkhaf.",
+      "initials": "AL",
+      "tint": "#8db9ab",
+      "cover": "linear-gradient(145deg, #b5d8c7, #7b9b94)",
+      "family": "creative",
+      "tools": [
+        "Adobe Family",
+        "Corel",
+        "Canva",
+        "Gemini",
+        "Higgsfield"
+      ],
+      "tags": [
+        "Direction créative",
+        "Coordination d’équipe",
+        "Production polyvalente",
+        "Création avec l’IA"
+      ]
+    },
+    {
+      "id": "gus-win",
+      "name": "Gus Win",
+      "title": "Content Team",
+      "expectation": "Réaliser les prises de vue et le montage des contenus confiés, produire les visuels IA prévus et maintenir des fichiers utilisables par l’équipe.",
+      "strengths": [
+        "Exécution jugée efficace par le management.",
+        "Bonne volonté signalée et adéquation perçue avec son rôle de production."
+      ],
+      "progress": [
+        "Enrichir les propositions créatives à partir de références partagées.",
+        "Clarifier les tâches de suivi attendues et les informations à transmettre.",
+        "Identifier les formations techniques utiles aux besoins de production."
+      ],
+      "achievements": [],
+      "nextMonth": [
+        {
+          "title": "Revoir ensemble une sélection de productions représentatives.",
+          "owner": "Gus Win et référent créatif",
+          "criterion": "La revue identifie les points d’appui et un objectif concret de progression, illustré par des exemples."
+        },
+        {
+          "title": "Définir une routine de remise et de transmission des fichiers.",
+          "owner": "Gus Win et responsable de production",
+          "criterion": "Pour les productions pilotes, le livrable, son emplacement, son état de validation et la prochaine étape sont clairement transmis."
+        },
+        {
+          "title": "Étudier une initiation aux prises de vue immersives adaptée aux projets.",
+          "owner": "Management et Gus Win",
+          "criterion": "Les besoins, prérequis et conditions de formation sont clarifiés avant toute décision de mise en pratique."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management décrit une exécution efficace, sans livrable précis joint à ce stade."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage propose d’enrichir la créativité et les techniques de prise de vue."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à préciser",
+          "evidence": "L’efficacité d’exécution rapportée ne suffit pas à déterminer le niveau d’autonomie selon les missions."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à développer",
+          "evidence": "Le management décrit le suivi administratif comme un domaine à encadrer plus clairement."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à préciser",
+          "evidence": "La bonne volonté est rapportée, mais les pratiques de coordination ne sont pas illustrées par un exemple détaillé."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Des outils sont listés dans la fiche et une piste de formation immersive est proposée ; la maîtrise actuelle reste à documenter."
+        }
+      ],
+      "uncertaintyNote": "Les appréciations sont générales et proviennent du management. Aucun jalon de production individuel suffisamment précis n’est disponible pour compléter les réalisations.",
+      "initials": "GW",
+      "tint": "#b9949b",
+      "cover": "linear-gradient(145deg, #dec0bc, #aa7d8c)",
+      "family": "creative",
+      "tools": [
+        "Adobe Family",
+        "Canva",
+        "Gemini",
+        "Higgsfield"
+      ],
+      "tags": [
+        "Prises de vue",
+        "Montage vidéo",
+        "Intérieurs avec l’IA",
+        "Gestion des ressources"
+      ]
+    },
+    {
+      "id": "april",
+      "name": "April",
+      "title": "Content Team",
+      "expectation": "Créer des supports graphiques et des images conformes aux besoins des marques, en organisant les ressources et les échanges nécessaires à leur validation.",
+      "strengths": [
+        "Forte implication et volonté de bien faire soulignées par le management.",
+        "Capacité à reprendre une tâche et à intégrer des ajustements rapportée sur un exemple concret."
+      ],
+      "progress": [
+        "Consacrer davantage de temps au cadrage initial pour sécuriser la première version.",
+        "Distinguer les besoins de méthode, de formation et d’outillage.",
+        "Explorer progressivement des responsabilités de suivi compatibles avec la charge et le rôle."
+      ],
+      "achievements": [
+        {
+          "title": "Un calendrier de production a été mis en place après des ajustements.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "La tâche lui aurait été transférée après une période d’attente ; la version finale est décrite comme satisfaisante, sans pièce examinée."
+        }
+      ],
+      "nextMonth": [
+        {
+          "title": "Tester une courte phase de cadrage avant la réalisation d’un livrable.",
+          "owner": "April et référent de la mission",
+          "criterion": "Le format, le destinataire, les références et le valideur sont confirmés sur chaque mission pilote avant la production."
+        },
+        {
+          "title": "Identifier les moyens techniques qui faciliteraient l’exécution.",
+          "owner": "April, référent créatif et management",
+          "criterion": "Une liste priorisée relie chaque besoin à une difficulté observée et à un résultat attendu ; les décisions restent à valider."
+        },
+        {
+          "title": "Étudier un essai de suivi sur un projet clairement délimité.",
+          "owner": "Management et April",
+          "criterion": "Avant tout essai, le périmètre, la charge, l’accompagnement et les critères de revue sont convenus."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management rapporte une tâche de calendrier menée à une version satisfaisante après reprise."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "à préciser",
+          "evidence": "L’exemple disponible ne permet pas encore d’apprécier la créativité sur les productions graphiques du poste."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage propose de renforcer le cadrage initial et la réflexion avant exécution."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à préciser",
+          "evidence": "Une prise de responsabilité supplémentaire est envisagée ; sa pertinence et les conditions restent à tester."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à préciser",
+          "evidence": "L’implication et la volonté de bien faire sont rapportées, sans exemple détaillé de coordination collective."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Des besoins de moyens techniques sont évoqués, mais l’écart entre accès aux outils et besoin de formation reste à établir."
+        }
+      ],
+      "uncertaintyNote": "L’appréciation repose principalement sur une tâche ponctuelle de calendrier, distincte du cœur graphique du poste. Les productions habituelles doivent compléter la lecture.",
+      "initials": "AP",
+      "tint": "#afa2c5",
+      "cover": "linear-gradient(145deg, #d6c7e4, #a68dbb)",
+      "family": "creative",
+      "tools": [
+        "Adobe Family",
+        "Canva",
+        "Higgsfield"
+      ],
+      "tags": [
+        "Design graphique",
+        "Retouche photo",
+        "Création avec l’IA",
+        "Gestion des ressources"
+      ]
+    },
+    {
+      "id": "marley",
+      "name": "Marley",
+      "title": "Podcast Operator & Editor",
+      "expectation": "Préparer et opérer les productions podcast, en assurer le montage et contribuer aux créations IA de soutien selon les priorités convenues.",
+      "strengths": [],
+      "progress": [
+        "Clarifier la répartition du temps et les missions réellement confiées.",
+        "Rendre les compétences et les disponibilités plus visibles pour l’équipe.",
+        "Identifier les possibilités de développement technique à partir des besoins confirmés."
+      ],
+      "achievements": [],
+      "nextMonth": [
+        {
+          "title": "Faire un état des missions, de la charge et des disponibilités.",
+          "owner": "Marley, responsable créatif et management",
+          "criterion": "Une vue partagée précise les productions en cours, les priorités et les possibilités de contribution, sans présumer d’une nouvelle affectation."
+        },
+        {
+          "title": "Examiner une sélection de productions pour documenter les compétences.",
+          "owner": "Marley et référent créatif",
+          "criterion": "Des exemples identifiés permettent de distinguer les compétences podcast, montage et création IA, avec les contributions individuelles."
+        },
+        {
+          "title": "Étudier une formation technique adaptée aux projets, dont les prises de vue immersives si pertinentes.",
+          "owner": "Management et Marley",
+          "criterion": "Un besoin concret, les prérequis et les conditions de formation sont précisés avant toute décision."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "non évalué",
+          "evidence": "Le témoignage ne fournit pas de livrable individuel détaillé permettant d’apprécier l’exécution."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "non évalué",
+          "evidence": "Aucun exemple suffisamment précis ne permet de qualifier la créativité."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "non évalué",
+          "evidence": "L’autonomie dans les missions podcast, montage ou IA n’est pas documentée."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "non évalué",
+          "evidence": "Aucun exemple individuel de suivi n’a été décrit."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à préciser",
+          "evidence": "Le management évoque une disponibilité potentiellement mieux mobilisable ; l’allocation réelle doit être clarifiée."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à préciser",
+          "evidence": "Des outils sont mentionnés dans la fiche et une piste de formation est proposée ; les compétences actuelles restent à examiner."
+        }
+      ],
+      "uncertaintyNote": "Le récit soulève surtout une question d’allocation des ressources. Il ne permet pas de conclure à une insuffisance individuelle ni d’attribuer un niveau de performance à Marley.",
+      "initials": "MA",
+      "tint": "#9cae9f",
+      "cover": "linear-gradient(145deg, #c5d1b9, #829f93)",
+      "family": "creative",
+      "tools": [
+        "Adobe Family",
+        "Gemini",
+        "Higgsfield"
+      ],
+      "tags": [
+        "Opération podcast",
+        "Montage podcast",
+        "Installation audio",
+        "Intérieurs avec l’IA"
+      ]
+    },
+    {
+      "id": "dian",
+      "name": "Dian",
+      "title": "AI Editing",
+      "expectation": "Produire les montages et retouches IA demandés en respectant les intentions graphiques, les formats et les critères de validation convenus.",
+      "strengths": [
+        "Volume de production jugé important par le management.",
+        "Potentiel de progression technique et graphique perçu comme favorable."
+      ],
+      "progress": [
+        "Consolider la lecture de la direction esthétique globale.",
+        "Développer les techniques de montage et de retouche utiles aux productions attendues.",
+        "Utiliser des validations intermédiaires pour progresser vers une réalisation plus autonome."
+      ],
+      "achievements": [
+        {
+          "title": "Une production importante de contenus est rapportée par le management.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "Le volume n’est pas quantifié et les livrables individuels n’ont pas encore été examinés."
+        }
+      ],
+      "nextMonth": [
+        {
+          "title": "Définir un petit ensemble de références et de critères graphiques partagés.",
+          "owner": "Dian et référent graphique à confirmer",
+          "criterion": "Les productions pilotes disposent d’exemples de référence et de points de contrôle compréhensibles avant le montage."
+        },
+        {
+          "title": "Organiser des retours intermédiaires courts sur les productions choisies.",
+          "owner": "Dian et valideur graphique",
+          "criterion": "Chaque retour distingue les points acquis, les ajustements demandés et la prochaine version attendue."
+        },
+        {
+          "title": "Choisir un objectif technique de formation à partir d’exemples réels.",
+          "owner": "Dian, référent technique et management",
+          "criterion": "La compétence choisie est mise en pratique sur une production pilote et comparée aux critères convenus."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management souligne un volume de production important ; la qualité et les délais restent à documenter par livrable."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "à développer",
+          "evidence": "Le témoignage identifie un besoin de mieux intégrer la vision esthétique globale."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à développer",
+          "evidence": "Des validations régulières et des repères plus explicites sont proposés pour accompagner la progression."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "non évalué",
+          "evidence": "Aucun exemple précis de suivi des tâches n’est disponible dans le récit."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "à préciser",
+          "evidence": "Le récit ne documente pas suffisamment les pratiques d’échange et de coordination ; la discrétion ne constitue pas une mesure de collaboration."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "à développer",
+          "evidence": "Le management évoque un besoin de techniques et de formation supplémentaires, à préciser sur des productions concrètes."
+        }
+      ],
+      "uncertaintyNote": "Les appréciations de volume et de potentiel ne remplacent pas une revue des productions. Les compétences techniques, la qualité et les délais doivent être détaillés à partir d’exemples.",
+      "initials": "DI",
+      "tint": "#9fadd3",
+      "cover": "linear-gradient(145deg, #cbd6ec, #8d9dc4)",
+      "family": "creative",
+      "tools": [
+        "Higgsfield",
+        "CapCut"
+      ],
+      "tags": [
+        "Montage avec l’IA",
+        "Face swap",
+        "Vidéo courte",
+        "Retouche d’images"
+      ]
+    },
+    {
+      "id": "anais",
+      "name": "Anais",
+      "title": "French Content & Marketing Admin",
+      "expectation": "Préparer et adapter les contenus en français, les présentations et les supports administratifs marketing en respectant les besoins et validations convenus.",
+      "strengths": [
+        "Missions décrites comme remplies par le management.",
+        "Écoute et concentration soulignées comme des points d’appui.",
+        "Capacité de contribution supplémentaire envisagée, sous réserve du périmètre et de la disponibilité."
+      ],
+      "progress": [
+        "Clarifier le périmètre réel et les capacités disponibles avant d’élargir les missions.",
+        "Étudier un rôle de liaison entre les besoins marketing et la production créative.",
+        "Documenter les réalisations pour rendre les contributions et les compétences plus lisibles."
+      ],
+      "achievements": [
+        {
+          "title": "Les missions confiées sont décrites comme remplies par le management.",
+          "sourceType": "Témoignage du management — 30 octobre 2026",
+          "evidence": "Cette appréciation est générale ; l’inventaire des livrables, les échéances et les validations ne sont pas encore disponibles."
+        }
+      ],
+      "nextMonth": [
+        {
+          "title": "Confirmer le périmètre des missions et la disponibilité réelle.",
+          "owner": "Anais et management",
+          "criterion": "Les priorités, les interlocuteurs et la charge sont explicités avant toute proposition d’élargissement du rôle."
+        },
+        {
+          "title": "Étudier un rôle de liaison sur une production clairement définie.",
+          "owner": "Management, Anais et responsable créatif",
+          "criterion": "Une décision est prise sur la pertinence de l’essai ; si retenu, son périmètre, sa charge et son circuit de validation sont convenus."
+        },
+        {
+          "title": "Rassembler des exemples représentatifs des travaux réalisés.",
+          "owner": "Anais et manager référent",
+          "criterion": "Les exemples précisent la demande, la contribution personnelle, le résultat livré et sa validation."
+        }
+      ],
+      "domains": [
+        {
+          "key": "execution",
+          "label": "Exécution",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management décrit les missions comme remplies, sans inventaire détaillé des livrables à ce stade."
+        },
+        {
+          "key": "creativity",
+          "label": "Créativité",
+          "qualitative": "à préciser",
+          "evidence": "Aucun exemple suffisamment détaillé ne permet encore de qualifier la contribution créative."
+        },
+        {
+          "key": "autonomy",
+          "label": "Autonomie",
+          "qualitative": "à préciser",
+          "evidence": "L’écoute et la concentration sont rapportées ; le niveau d’autonomie selon les missions reste à documenter."
+        },
+        {
+          "key": "follow_up",
+          "label": "Suivi",
+          "qualitative": "à préciser",
+          "evidence": "Les pratiques individuelles de suivi ne sont pas illustrées par un exemple précis."
+        },
+        {
+          "key": "collaboration",
+          "label": "Collaboration",
+          "qualitative": "point d’appui rapporté",
+          "evidence": "Le management souligne une écoute attentive et envisage une contribution à la liaison avec la production créative."
+        },
+        {
+          "key": "ai_technical",
+          "label": "IA & technique",
+          "qualitative": "non évalué",
+          "evidence": "Aucun exemple d’usage ou de maîtrise de l’IA n’a été décrit individuellement."
+        }
+      ],
+      "uncertaintyNote": "Le périmètre décrit oralement paraît plus ciblé que la fiche de poste. Il doit être confirmé avant toute proposition de responsabilité supplémentaire ; les appréciations restent celles du management.",
+      "initials": "AN",
+      "tint": "#c9b38e",
+      "cover": "linear-gradient(145deg, #e4d6b7, #b4a07e)",
+      "family": "marketing",
+      "tools": [
+        "Canva",
+        "CapCut"
+      ],
+      "tags": [
+        "Contenus en français",
+        "Montage vidéo",
+        "Présentations",
+        "Administration marketing"
+      ]
+    }
+  ]
+};
+
+</script><script>
+'use strict';
+const DATA=window.TEAM_DATA,ALL=DATA.profiles,$=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mod=(x,n)=>(x%n+n)%n;
+let filtered=[...ALL],current=0,view='helix',filter='all',query='',activeProfile=null,activeTab='summary',activeAxis=0,lastFocus=null;
+const COLORS={'point d’appui rapporté':'#72a899','à développer':'#c3a077','à préciser':'#afa1bf','non évalué':'#d3c8dc'};
+const LABELS={'point d’appui rapporté':'Point d’appui','à développer':'À développer','à préciser':'À préciser','non évalué':'Non évalué'};
+let artSerial=0;
+const icon='<svg viewBox="0 0 20 20" aria-hidden="true" width="14" height="14"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>';
+function art(p,i,mini=false){
+ const id='g-'+p.id+'-'+(++artSerial);
+ const paths=[
+ `<circle cx="126" cy="116" r="78" fill="url(#${id})"/><ellipse cx="126" cy="116" rx="94" ry="33" fill="none" stroke="#fff9" stroke-width="1" transform="rotate(-32 126 116)"/><circle cx="126" cy="116" r="55" fill="none" stroke="#fff5"/>`,
+ `<g fill="none" stroke="#fff8" stroke-width="12"><path d="M61 226V102a65 65 0 0 1 130 0v124"/><path d="M88 226V104a38 38 0 0 1 76 0v122"/><path d="M115 226V104a11 11 0 0 1 22 0v122"/></g>`,
+ `<g transform="translate(126 115) rotate(-25)" fill="none" stroke="#fff9"><rect x="-68" y="-68" width="136" height="136" rx="24" stroke-width="1.5"/><rect x="-51" y="-51" width="102" height="102" rx="19" stroke-width="10"/><rect x="-29" y="-29" width="58" height="58" rx="12" stroke-width="1"/></g>`,
+ `<g transform="translate(126 114) rotate(-18)"><rect x="-73" y="-54" width="146" height="108" rx="23" fill="#fff2" stroke="#fffa"/><rect x="-47" y="-73" width="94" height="146" rx="22" fill="#fff2" stroke="#fff7"/><circle r="48" fill="url(#${id})"/><circle r="23" fill="none" stroke="#fff9"/></g>`,
+ `<g transform="translate(126 115)" fill="#fff5" stroke="#fff9" stroke-width=".8">${Array.from({length:8},(_,j)=>`<ellipse rx="27" ry="69" transform="rotate(${j*45}) translate(0 -19)"/>`).join('')}<circle r="30" fill="url(#${id})"/></g>`,
+ `<g fill="none" stroke="#fffa" stroke-width="2">${[0,1,2,3,4].map(j=>`<path d="M-10 ${82+j*17} Q55 ${25+j*19} 126 ${104+j*16} T270 ${89+j*12}"/>`).join('')}</g><circle cx="125" cy="116" r="54" fill="#ffffff18" stroke="#fff3"/>`,
+ `<path d="M200 84c31 46-5 102-56 108S44 167 47 116 70 32 113 38s61 7 87 46" fill="url(#${id})" stroke="#fff9"/><path d="M180 68c38 54 6 108-47 117S38 152 61 100 82 30 120 46s40 0 60 22" fill="none" stroke="#fff7"/><circle cx="154" cy="76" r="13" fill="#fff7"/>`,
+ `<g transform="translate(126 118) rotate(-10)" fill="none" stroke="#fffc"><path d="m-66 64 66-129 66 129M-43 18h87" stroke-width="18"/><path d="M-79 81H79" stroke-width="1"/><circle r="81" stroke="#fff4"/></g>`
+ ];
+ return `<svg viewBox="0 0 252 230" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffffd9"/><stop offset=".45" stop-color="${p.tint}" stop-opacity=".35"/><stop offset="1" stop-color="#ffffffa1"/></linearGradient></defs>${paths[i%8]}</svg><span class="art-mono">${p.initials}</span>`;
+}
+function cardHTML(p,asGallery=false){const i=ALL.indexOf(p);return `<button class="${asGallery?'gallery-card':'person-card'}" data-person="${p.id}" aria-label="Ouvrir le profil de ${p.name}" style="--cover:${p.cover}"><div class="card-art">${art(p,i)}<span class="art-no">${String(i+1).padStart(2,'0')} / 08</span><span class="art-symbol">✧</span><span class="art-category">${p.family==='marketing'?'MARKETING & COORDINATION':'CRÉATION & PRODUCTION'}</span></div><div class="card-copy"><h2>${p.name}</h2><p>${p.title}</p><span class="card-arrow">↗</span></div></button>`;}
+function buildCards(){
+ $('#orbit').innerHTML=filtered.map(p=>cardHTML(p)).join('');
+ $('#gallery-grid').innerHTML=filtered.map(p=>cardHTML(p,true)).join('')||'<p class="no-results">Aucun profil trouvé. Essaie une autre recherche.</p>';
+ $('#spine-items').innerHTML=filtered.map((p,i)=>`<button data-select="${i}" aria-label="Sélectionner ${p.name}"><span class="spine-dot">${String(ALL.indexOf(p)+1).padStart(2,'0')}</span><span class="spine-name">${p.name}</span></button>`).join('');
+ document.querySelectorAll('[data-person]').forEach(b=>b.addEventListener('click',()=>{const p=ALL.find(p=>p.id===b.dataset.person);current=filtered.indexOf(p);update();openProfile(p);}));
+ document.querySelectorAll('[data-select]').forEach(b=>b.onclick=()=>select(Number(b.dataset.select)));
+ $('#empty-state').hidden=filtered.length>0;$('#orbit').hidden=!filtered.length;$('#inspector').hidden=!filtered.length;$('#previous').disabled=$('#next').disabled=filtered.length<2;update();
+}
+function update(){
+ if(!filtered.length)return;current=mod(current,filtered.length);
+ const n=filtered.length,mobile=matchMedia('(max-width:760px)').matches;
+ const cards=[...$('#orbit').children];
+ cards.forEach((c,i)=>{let d=mod(i-current+n/2,n)-n/2;const angle=d*(view==='ring'?.84:.7);let x,y,z,ry,rz,scale;
+ if(view==='ring'){x=Math.sin(angle)*(mobile?168:270);y=(1-Math.cos(angle))*(mobile?18:34);z=(Math.cos(angle)-1)*210;ry=-d*26;rz=0;scale=1;}else{x=Math.sin(angle)*(mobile?155:245);y=d*(mobile?49:65);z=(Math.cos(angle)-1)*210;ry=-d*23;rz=-d*1.4;scale=1;}
+ c.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${scale})`;
+ c.style.opacity=d===0?'1':String(Math.max(.1,.67-Math.abs(d)*.12));c.style.filter=d===0?'none':`blur(${Math.max(0,Math.abs(d)-1)*.35}px)`;c.style.zIndex=String(20-Math.round(Math.abs(d)*3));c.classList.toggle('active',d===0);c.setAttribute('aria-current',d===0?'true':'false');c.tabIndex=d===0?0:-1;
+ });
+ $('#position').textContent=String(current+1).padStart(2,'0')+' / '+String(n).padStart(2,'0');
+ document.querySelectorAll('[data-select]').forEach((b,i)=>{b.classList.toggle('active',i===current);b.setAttribute('aria-current',i===current?'true':'false');});
+ const p=filtered[current],i=ALL.indexOf(p);
+ $('#inspector').innerHTML=`<div class="inspector-number"><strong>${String(i+1).padStart(2,'0')}</strong> / 08 PROFILS</div><span class="eyebrow">${p.family==='marketing'?'PILOTAGE & MARKETING':'CRÉATION & PRODUCTION'}</span><h1>${p.name}</h1><p class="inspector-role">${p.title}</p><p class="inspector-expectation">${p.expectation}</p><div class="inspector-tags">${p.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><button class="pill dark" id="explore-profile">Explorer le profil ${icon}</button><div class="inspector-foot">Rôle · contributions · pistes de progression<br>Lecture qualitative, à compléter ensemble.</div>`;
+ $('#explore-profile').onclick=()=>openProfile(p);
+}
+function select(i){if(!filtered.length)return;current=mod(i,filtered.length);update();}
+function setView(v){view=v;$('#explorer').dataset.view=v;document.body.classList.toggle('gallery-view',v==='gallery');$('#gallery').hidden=v!=='gallery';document.querySelectorAll('button[data-view]').forEach(b=>{b.classList.toggle('selected',b.dataset.view===v);b.setAttribute('aria-pressed',b.dataset.view===v?'true':'false');});update();}
+function applyFilter(){const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');filtered=ALL.filter(p=>(filter==='all'||p.family===filter)&&norm([p.name,p.title,...p.tags,p.expectation].join(' ')).includes(norm(query)));current=0;buildCards();$('#announcement').textContent=filtered.length+' profils trouvés.';}
+function radar(p){const cx=168,cy=143,r=96,point=(i,t=1)=>[cx+Math.sin(i*Math.PI/3)*r*t,cy-Math.cos(i*Math.PI/3)*r*t];const grids=[.25,.5,.75,1].map(t=>`<polygon class="radar-grid" points="${p.domains.map((_,i)=>point(i,t).join(',')).join(' ')}"/>`).join('');return `<svg class="radar" viewBox="0 0 336 290" role="group" aria-label="Carte qualitative des six compétences, sans scores">${grids}${p.domains.map((d,i)=>{const [x,y]=point(i),[lx,ly]=point(i,1.25),anchor=i===0||i===3?'middle':i<3?'start':'end',fill=COLORS[d.qualitative]||'#d3c8dc',labelW=d.label.length*5,labelX=anchor==='middle'?lx-labelW/2:anchor==='end'?lx-labelW:lx,minX=Math.min(x-13,labelX-4),maxX=Math.max(x+13,labelX+labelW+4),minY=Math.min(y-13,ly-12),maxY=Math.max(y+13,ly+8);return `<line class="radar-axis" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}"/><g class="radar-node ${i===activeAxis?'active':''}" data-axis="${i}" role="button" tabindex="0" aria-label="${esc(d.label+' : '+LABELS[d.qualitative])}"><rect x="${minX}" y="${minY}" width="${maxX-minX}" height="${maxY-minY}" fill="transparent"/><circle class="radar-pulse" cx="${x}" cy="${y}" r="10" fill="${fill}" opacity=".15"/><circle cx="${x}" cy="${y}" r="4" fill="${fill}" stroke="white" stroke-width="2"/><text x="${lx}" y="${ly+3}" text-anchor="${anchor}">${esc(d.label)}</text></g>`;}).join('')}<circle cx="${cx}" cy="${cy}" r="21" fill="#faf8fd" stroke="#e8e0ee"/><text x="${cx}" y="${cy+4}" text-anchor="middle" fill="#b39dc4" style="font:italic 15px Georgia,serif">K.</text></svg>`;}
+function axisEvidence(){const d=activeProfile.domains[activeAxis];$('#radar-evidence').innerHTML=`<div class="axis-title"><span>${d.label}</span><span class="axis-status">${LABELS[d.qualitative]}</span></div><p>${esc(d.evidence)}</p>`;document.querySelectorAll('[data-axis]').forEach(b=>b.classList.toggle('active',Number(b.dataset.axis)===activeAxis));}
+function renderProfile(){const p=activeProfile,i=ALL.indexOf(p);$('#profile-inner').innerHTML=`<header class="profile-head"><div class="profile-heading"><div class="mini-art" style="--cover:${p.cover}">${art(p,i,true)}</div><div><span class="eyebrow">CARTE INDIVIDUELLE · OCTOBRE 2026</span><h1 id="profile-name">${p.name}</h1><p>${p.title}</p></div></div><div class="profile-controls"><button class="round" id="profile-previous" aria-label="Profil précédent">←</button><button class="round" id="profile-next" aria-label="Profil suivant">→</button><button class="round close" id="close-profile" aria-label="Fermer le profil">×</button></div></header><div class="profile-layout"><div class="profile-main"><nav class="profile-tabs" aria-label="Contenu du profil" role="tablist">${[['summary','Le profil'],['achievements','Contributions'],['actions','Novembre']].map(([id,label])=>`<button role="tab" id="profile-tab-${id}" aria-controls="profile-content" aria-selected="${activeTab===id}" data-tab="${id}" class="${activeTab===id?'active':''}">${label}</button>`).join('')}</nav><section id="profile-content" class="profile-section" role="tabpanel" aria-labelledby="profile-tab-${activeTab}"></section></div><aside class="profile-side"><div class="radar-heading"><h2>La carte des skills.</h2><span>6 AXES</span></div><div id="radar-holder">${radar(p)}</div><p class="radar-note">Repères qualitatifs issus des retours du management.<br>La position des points ne représente pas un score.</p><div class="radar-evidence" id="radar-evidence"></div><div class="radar-legend"><span><i style="background:#72a899"></i>Point d’appui</span><span><i style="background:#c3a077"></i>À développer</span><span><i style="background:#afa1bf"></i>À préciser</span></div><span class="tools-label">OUTILS CITÉS DANS LA FICHE</span><div class="tool-tags">${p.tools.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="source-note">Fiche de poste + retour du management du 30 octobre 2026.<br>${esc(p.uncertaintyNote)}<br>La présence d’un outil ne démontre pas sa maîtrise.</div></aside></div>`;
+ $('#close-profile').onclick=()=>$('#profile-dialog').close();$('#profile-previous').onclick=()=>stepProfile(-1);$('#profile-next').onclick=()=>stepProfile(1);
+ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{activeTab=b.dataset.tab;renderProfile();$('#profile-tab-'+activeTab).focus();});
+ document.querySelectorAll('[data-axis]').forEach(b=>{const choose=()=>{activeAxis=Number(b.dataset.axis);axisEvidence();};b.onclick=choose;b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose();}};});
+ renderProfileContent();axisEvidence();
+}
+function renderProfileContent(){const p=activeProfile;let html='';if(activeTab==='summary'){html=`<span class="eyebrow">L’ATTENTE DU POSTE</span><h2>Sa contribution à l’équipe.</h2><p class="expectation">${p.expectation}</p><div class="content-block"><h3>Les points d’appui</h3>${p.strengths.length?`<ul>${p.strengths.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:'<p class="body-hint">Les exemples individuels restent à compléter pour faire ressortir les points d’appui.</p>'}</div><div class="content-block growth"><h3>Les pistes de progression</h3><ul>${p.progress.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div><div class="content-block"><h3>Le périmètre du rôle</h3><div class="tool-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`;}else if(activeTab==='achievements'){html=`<span class="eyebrow">CONTRIBUTIONS & EXEMPLES</span><h2>Ce qui a avancé.</h2><p class="body-hint">Éléments rapportés par le management, à compléter avec les livrables et les comptes rendus.</p>${p.achievements.length?p.achievements.map(a=>`<article class="achievement"><h3>${esc(a.title)}</h3><p>${esc(a.evidence)}</p><span class="source-pill">${esc(a.sourceType)}</span></article>`).join(''):'<article class="achievement"><h3>Des exemples à réunir.</h3><p>Les informations disponibles ne permettent pas encore de détailler des réalisations individuelles. Ce champ reste ouvert ; il ne signifie pas qu’aucun travail n’a été réalisé.</p><span class="source-pill">À compléter lors des prochaines revues</span></article>'}`;}else{html=`<span class="eyebrow">LE PROCHAIN CHAPITRE</span><h2>Les priorités de novembre.</h2><span class="month-tag">NOVEMBRE 2026 · PROPOSITIONS</span><p class="month-note">Des pistes à discuter et à confirmer ensemble. Les responsables et les échéances précises seront convenus avant mise en œuvre.</p>${p.nextMonth.map((a,i)=>`<article class="action"><span class="action-no">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(a.title)}</h3><p><strong>Avec :</strong> ${esc(a.owner)}</p><p><strong>Résultat observable :</strong> ${esc(a.criterion)}</p></div></article>`).join('')}`;}$('#profile-content').innerHTML=html;}
+function openProfile(p){lastFocus=document.activeElement;activeProfile=p;activeTab='summary';activeAxis=0;renderProfile();if(!$('#profile-dialog').open)$('#profile-dialog').showModal();$('#profile-dialog').scrollTop=0;$('#close-profile').focus();}
+function stepProfile(dir){const list=filtered.length?filtered:ALL;let i=list.indexOf(activeProfile);activeProfile=list[mod(i+dir,list.length)];current=filtered.indexOf(activeProfile);activeAxis=0;renderProfile();update();$('#profile-dialog').scrollTop=0;$(dir<0?'#profile-previous':'#profile-next').focus();}
+$('#profile-dialog').addEventListener('close',()=>{if(lastFocus&&lastFocus.isConnected)lastFocus.focus();});
+function info(mode){const programme=mode==='programme';$('#info-content').innerHTML=programme?`<span class="eyebrow programme-head"><span class="gradient-dot"></span> LE PROCHAIN CHAPITRE</span><h1 id="info-title">Faire avancer l’équipe,<br>ensemble.</h1><p>Les propositions collectives pour novembre 2026 : un suivi plus visible, des validations plus claires et des moyens de progresser.</p><ol class="programme-list"><li><h2>Un rythme partagé.</h2><p>Proposer trois points opérationnels de 20 à 30 minutes par semaine, avec décisions, responsables et prochaines étapes consignés.</p></li><li><h2>Des projets qui vont au bout.</h2><p>Pour chaque projet : une personne qui suit, une personne qui valide, une échéance convenue et une prochaine action.</p></li><li><h2>Une production plus lisible.</h2><p>Partager la charge, les affectations et l’emplacement des fichiers. Étudier l’organisation commune des ressources et les moyens utiles.</p></li><li><h2>Apprendre sur des cas concrets.</h2><p>Travailler les outils IA et les techniques utiles à partir de productions pilotes, avec références et retours intermédiaires.</p></li><li><h2>Observer, puis ajuster.</h2><p>Réunir les livrables et comptes rendus, suivre les progrès et confirmer les prochaines responsabilités avec les personnes concernées.</p></li></ol><p class="footnote">Propositions à valider avec le management et l’équipe. Cette vue ne constitue pas un plan d’affectation déjà approuvé.</p>`:`<span class="eyebrow">À PROPOS DE TEAM ATLAS</span><h1 id="info-title">Des rôles.<br>Des contributions.<br>Une suite à construire.</h1><p>Cette première lecture rassemble les huit fiches de poste fournies et le retour du management du 30 octobre 2026. Une neuvième personne annoncée reste à identifier.</p><p>Les appréciations sont qualitatives et provisoires. Les réalisations n’ont pas encore été corroborées par les livrables ou les comptes rendus des réunions. Un champ non évalué ne traduit pas une absence de compétence ou de réalisation.</p><p>La toile des compétences présente six axes de discussion. Les couleurs distinguent les points d’appui rapportés, les pistes de progression et les éléments à préciser. Aucun score numérique ni classement n’a été attribué.</p><p>Les actions de novembre sont des propositions à confirmer. Les exemples de missions sont résumés pour garder une lecture constructive et centrée sur le développement.</p><p class="footnote">Direction d’interface inspirée de la Motion Library de Beyond Media ; interface et illustrations originales pour Team Atlas. Aucun portrait réel n’a été fourni : les cartes utilisent des monogrammes abstraits.</p>`;$('#info-dialog').showModal();$('#close-info').focus();}
+$('#close-info').onclick=()=>$('#info-dialog').close();$('#about').onclick=()=>info('about');$('#programme').onclick=$('#month-link').onclick=()=>info('programme');
+$('#previous').onclick=()=>select(current-1);$('#next').onclick=()=>select(current+1);$('#search').oninput=e=>{query=e.target.value;applyFilter();};$('#reset-search').onclick=()=>{query='';filter='all';$('#search').value='';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));applyFilter();};
+document.querySelectorAll('button[data-view]').forEach(b=>b.onclick=()=>setView(b.dataset.view));document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));applyFilter();});$('#team-link').onclick=()=>{setView('helix');};$('.brand').onclick=e=>{e.preventDefault();$('#reset-search').click();setView('helix');};
+let wheel=0,lastWheel=0;$('#scene').addEventListener('wheel',e=>{if(view==='gallery'||filtered.length<2)return;e.preventDefault();wheel+=e.deltaY||e.deltaX;if(Math.abs(wheel)>45&&Date.now()-lastWheel>180){select(current+(wheel>0?1:-1));wheel=0;lastWheel=Date.now();}},{passive:false});
+let pointer=null,dragged=false;$('#scene').addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;pointer={x:e.clientX,y:e.clientY,id:e.pointerId};dragged=false;});$('#scene').addEventListener('pointermove',e=>{if(!pointer||pointer.id!==e.pointerId)return;const dx=e.clientX-pointer.x,dy=e.clientY-pointer.y;if(Math.max(Math.abs(dx),Math.abs(dy))>45){select(current+(Math.abs(dx)>Math.abs(dy)?(dx<0?1:-1):(dy<0?1:-1)));pointer.x=e.clientX;pointer.y=e.clientY;dragged=true;}});window.addEventListener('pointerup',()=>{pointer=null;setTimeout(()=>dragged=false,0);});$('#scene').addEventListener('click',e=>{if(dragged){e.preventDefault();e.stopPropagation();}},true);
+window.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select')||$('#info-dialog').open)return;if($('#profile-dialog').open)return;if(e.key==='/'){e.preventDefault();$('#search').focus();return;}if(view==='gallery')return;if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();select(current+(['ArrowRight','ArrowDown'].includes(e.key)?1:-1));}if(e.key==='Enter'&&document.activeElement===$('#scene')&&filtered.length){e.preventDefault();openProfile(filtered[current]);}});
+window.addEventListener('resize',update);buildCards();
+
+</script></body></html>
